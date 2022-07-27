@@ -1,0 +1,17 @@
+<script>
+var arr=new Array()
+arr[0]="img1.jpg";https://jyt0106.github.io/I/1.png //这里放图片路径
+arr[1]="img2.jpg";https://jyt0106.github.io/I/2.png
+arr[2]="img3.jpg";https://jyt0106.github.io/I/3.png
+arr[3]="img4.jpg";https://jyt0106.github.io/I/4.png
+arr[4]="img5.jpg";https://jyt0106.github.io/I/5.png
+var i=0;
+function image()
+var ima=document.getElementByld("image"); ima.src=arr[i]
+i++;
+if(i==5)
+i=0
+setTimeout("image()"，1000)//一秒钟调用一次
+</script>
+<body onLoad="image()">
+<img id="image" src="1.jpg" width="140" height="105"></body>
