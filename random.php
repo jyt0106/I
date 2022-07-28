@@ -1,11 +1,11 @@
 <?php
-//´æÓÐÃÀÍ¼Á´½ÓµÄÎÄ¼þÃûimg.txt
+//å­˜æœ‰ç¾Žå›¾é“¾æŽ¥çš„æ–‡ä»¶åimg.txt
 $filename = "img.txt";
 if(!file_exists($filename)){
-    die('ÎÄ¼þ²»´æÔÚ');
+    die('æ–‡ä»¶ä¸å­˜åœ¨');
 }
  
-//´ÓÎÄ±¾»ñÈ¡Á´½Ó
+//ä»Žæ–‡æœ¬èŽ·å–é“¾æŽ¥
 $pics = [];
 $fs = fopen($filename, "r");
 while(!feof($fs)){
@@ -15,14 +15,14 @@ while(!feof($fs)){
     }
 }
  
-//´ÓÊý×éËæ»ú»ñÈ¡Á´½Ó
+//ä»Žæ•°ç»„éšæœºèŽ·å–é“¾æŽ¥
 $pic = $pics[array_rand($pics)];
  
-//·µ»ØÖ¸¶¨¸ñÊ½
+//è¿”å›žæŒ‡å®šæ ¼å¼
 $type=$_GET['type'];
 switch($type){
  
-//JSON·µ»Ø
+//JSONè¿”å›ž
 case 'json':
     header('Content-type:text/json');
     die(json_encode(['pic'=>$pic]));
@@ -30,5 +30,4 @@ case 'json':
 default:
     die(header("Location: $pic"));
 }
- 
 ?>
